@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+// The greeting service definition.
+service MathServerService {
+  // Sends a greeting
+  rpc Add (MathServerRequest) returns (MathServerReply) {}
+}
+
+service MathClientService{
+  rpc UpdateTime(MathClientRequest) returns (MathClientRequest){}
+}
+
+message MathClientRequest{
+	int32 x = 1;
+}
+
+// The request message containing the user's name.
+message MathServerRequest {
+  float x = 1;
+  float y = 2;
+}
+
+// The response message containing the greetings
+message MathServerReply {
+  float message = 1;
+}
+
